@@ -254,7 +254,7 @@ class HomeActivity : BaseActivity<HomePresenter>(), HomeView {
 
         if (weather != null) {
             degreeTv.text = weather.main!!.temp!!.roundToInt().toString() + getString(R.string.celcius)
-            weather_icon.setImageResource(presenter.setAppropriateIcon(weather))
+            weather_icon.setImageResource(presenter.setAppropriateIcon(weather, Calendar.getInstance().time))
         }
 
         weatherLayout.visibility = View.VISIBLE

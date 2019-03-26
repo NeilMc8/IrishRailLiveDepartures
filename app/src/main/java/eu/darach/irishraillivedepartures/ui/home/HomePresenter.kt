@@ -70,11 +70,10 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView) {
 
     }
 
-    fun setAppropriateIcon(weatherObject: Weather): Int {
-        val currentTime = Calendar.getInstance().time
+    fun setAppropriateIcon(weatherObject: Weather, currentTime: Date): Int {
 
         if (currentTime.after(formatUnixTimeToDate(weatherObject.sys!!.sunrise)) &&
-            currentTime.before(formatUnixTimeToDate(weatherObject.sys.sunset))
+            currentTime.before(formatUnixTimeToDate(weatherObject.sys!!.sunset))
         ) {
             //daytime
             when (weatherObject.weatherData!![0].description) {
@@ -162,7 +161,7 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView) {
         return R.drawable.sun_icon
     }
 
-    private fun formatUnixTimeToDate(sunrise: Int?): Date {
+    fun formatUnixTimeToDate(sunrise: Int?): Date {
         return Date(sunrise!! * 1000L)
     }
 
