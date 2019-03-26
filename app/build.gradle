@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'io.fabric'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'IrishRailLiveDepartures'
+            keyPassword ''
+            storeFile file('/Users/darachronayne/AndroidStudioProjects/IrishRail/Release 1/IrishRailLiveDepartures')
+            storePassword ''
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "eu.darach.irishraillivedepartures"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.01"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.2-alpha01'
+    //Retrofit 2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //Dagger 2
+    implementation 'com.google.dagger:dagger:2.14.1'
+    kapt "com.google.dagger:dagger-compiler:2.14.1"
+    compileOnly 'org.glassfish:javax.annotation:3.1.1'
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //Lottie
+    implementation 'com.airbnb.android:lottie:2.5.0'
+    //Fabric
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+        transitive = true
+    }
+}

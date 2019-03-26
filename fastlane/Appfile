@@ -1,0 +1,2 @@
+json_key_file("‎⁨api-6582832819367256599-314516-f89c6902e5b4.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("eu.darach.irishraillivedepartures") # e.g. com.krausefx.app

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Irish Rail</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="good_morning">Good Morning.</string>
+    <string name="good_afternoon">Good Afternoon.</string>
+    <string name="good_evening">Good Evening.</string>
+    <string name="good_night">Good Night.</string>
+    <string name="ireland_ext">, Ireland</string>
+    <string name="search_station">Search Station</string>
+    <string name="API_KEY">7ec8d2f406960fa8b6ea9fb8a81cc8cc</string>
+    <string name="celcius">°C</string>
+    <string name="minute">min</string>
+    <string name="minutes_late">min late</string>
+    <string name="expected">Expected:\u0020</string>
+    <string name="from">From\u0020</string>
+    <string name="invalid_station">Invalid Station</string>
+</resources>

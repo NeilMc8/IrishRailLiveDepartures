@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/goodTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/ps_bold"
+                android:textColor="#fff"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weatherLayout" />
+
+            <TextView
+                android:id="@+id/timeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/ps_medium"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/weatherLayout" />
+
+            <TextView
+                android:id="@+id/dateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/ps_light"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeTv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weatherLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/degreeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/ps_reg"
+                    android:gravity="center"
+                    android:text="12°C"
+                    android:textColor="#fff"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@id/locationTv"
+                    app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+                <ImageView
+                    android:id="@+id/weather_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="8dp"
+                    android:src="@drawable/sun_icon"
+                    app:layout_constraintBottom_toTopOf="@id/locationTv"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline" />
+
+                <TextView
+                    android:id="@+id/locationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ps_light"
+                    android:gravity="center"
+                    android:text="Country Tippearay"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weather_icon" />
+
+                <ImageView
+                    android:id="@+id/locationIcon"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/location_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/locationTv"
+                    app:layout_constraintStart_toEndOf="@+id/locationTv"
+                    app:layout_constraintTop_toTopOf="@+id/locationTv" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_begin="66dp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/headerAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="-1dp"
+            android:layout_marginEnd="-1dp"
+            android:paddingBottom="90dp"
+            android:rotation="180"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topDashboard"
+            app:lottie_autoPlay="false"
+            app:lottie_fileName="green_waves.json"
+            app:lottie_loop="false" />
+
+        <AutoCompleteTextView
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/search_bar_bg"
+            android:completionThreshold="1"
+            android:fontFamily="@font/ps_reg"
+            android:hint="@string/search_station"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerAnimation" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/search_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/searchBar"
+            app:layout_constraintStart_toStartOf="@+id/searchBar"
+            app:layout_constraintTop_toTopOf="@+id/searchBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentsRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="64dp"
+            android:overScrollMode="never"
+            android:paddingBottom="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/irishrail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recentsRv" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/newActivityAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="new_activity.json"
+        app:lottie_loop="false" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
